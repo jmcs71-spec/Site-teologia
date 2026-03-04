@@ -11,7 +11,18 @@
 
     :root{--accent:#1167b1;--bg:#f8fbff;--card:#ffffff;--text:#0f1724}
     html,body{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; color:var(--text);background:linear-gradient(180deg,var(--bg),#ffffff)}
+
+    
     .wrap{max-width:980px;margin:28px auto;padding:20px}
+
+    /*60px + 16 +16 para os smartphones - considerando o padding do body em anterior como 26ps em cima e em baixo
+Técnica a considerar: padding atual mais 66
+Neste caso, não é o body, é o .wrap*/
+    .wrap {
+  padding-bottom: 86px;
+}
+
+
     header{border-left:6px solid var(--accent);background:rgba(17,103,177,0.04);padding:16px;border-radius:8px}
     h1{margin:0;font-size:1.5rem}
     p.lead{margin:8px 0 0;color:#334155}
@@ -26,45 +37,6 @@
 
 
   </style>
-
-<!-- Botão lateral esquerdo -->
-<a href="ficheiroa1.html" class="botao-lateral esquerda">Anterior</a>
-
-<!-- Botão lateral direito -->
-<a href="ficheiroa3.html" class="botao-lateral direita">Próximo</a>
-
-<style>
-.botao-lateral {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #1167b1;
-    color: white;
-    padding: 12px 18px;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    z-index: 1000;
-}
-
-/* Botão da esquerda */
-.botao-lateral.esquerda {
-    left: 0;
-    border-radius: 0 8px 8px 0;
-}
-
-/* Botão da direita */
-.botao-lateral.direita {
-    right: 0;
-    border-radius: 8px 0 0 8px;
-}
-
-/* Hover */
-.botao-lateral:hover {
-    background-color: #0d4f87;
-}
-</style>
-
 
 
 
@@ -126,5 +98,57 @@
 
     </main>
   </div>
+
+
+  <!-- Navegação no fundo -->
+<div class="navegacao-fundo">
+  <a href="ficheiroa1.html" class="nav-esquerda">Anterior</a>
+  <a href="index.html" class="nav-centro">Início</a>
+  <a href="ficheiroa3.html" class="nav-direita">Próximo</a>
+</div>
+
+<style>
+/* Rodapé fixo ao fundo, ocupa toda a largura */
+.navegacao-fundo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 0;
+  background: white;
+  border-top: 1px solid #ccc;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  z-index: 1000; /* garante que fica por cima */
+}
+
+/* Cada link como grid-item válido */
+.navegacao-fundo a {
+  display: block;   /* 🔑 essencial */
+  cursor: pointer;
+  color: #285e8e;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Posicionamento */
+.nav-esquerda { justify-self: start; }
+.nav-centro   { justify-self: center; }
+.nav-direita  { justify-self: end; }
+
+/* Hover */
+.navegacao-fundo a:hover {
+  text-decoration: underline;
+}
+</style>
+
+
+
+
+
 </body>
 </html>

@@ -2,9 +2,12 @@
     body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#fbfeff 0%, #ffffff 100%); color:var(--text); margin:0; padding:28px;}
 
 /*Necessário para rodapé - botões de transição apareçam bem*/
+
+/*Técnica a considerar: padding atual mais 66*/
+
     body {
-  margin: 0;
-  padding-bottom: 70px; /* altura do rodapé */
+/*  margin: 0;*/
+  padding-bottom: 94px; /* altura do rodapé */
 }
 
     .container{max-width:900px;margin:0 auto}

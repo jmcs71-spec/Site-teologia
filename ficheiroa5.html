@@ -10,13 +10,22 @@
 
     :root{--accent:#285e8e;--bg:#f3f8ff;--card:#ffffff;--text:#0b2540}
     body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial; margin:0; padding:26px; background:linear-gradient(180deg,var(--bg),#ffffff); color:var(--text)}
-/*    .container{max-width:980px;margin:0 auto} */
+
 /*  Alterado para poder vizualizar completamente o conteúdo quando página chega ao fim*/
-  .container {
+/*60px + 16 +16 para os smartphones - considerando o padding do body em anterior como 26ps em cima e em baixo
+Técnica a considerar: padding atual mais 66*/
+    body {
+  padding-bottom: 92px;
+}
+   .container{max-width:980px;margin:0 auto} 
+/*  Alterado para poder vizualizar completamente o conteúdo quando página chega ao fim*/
+
+/*Passei essa função para o body */
+/*  .container {
     max-width: 980px;
-    margin: 0 auto;
-    padding-bottom: 60px; /* 🔑 espaço para o rodapé */
-  }
+    margin: 0 auto;*/
+  /*  padding-bottom: 60px;*/ /* 🔑 espaço para o rodapé */
+  /*}*/
 
     header{border-left:6px solid var(--accent);background:rgba(40,94,142,0.04);padding:16px;border-radius:8px}
     h1{margin:0;font-size:1.4rem}
