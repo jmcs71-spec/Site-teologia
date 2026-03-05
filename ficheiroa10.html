@@ -13,6 +13,19 @@
       background-color: #f9f9f9;
       color: #222;
     }
+
+
+    /*  Alterado para poder vizualizar completamente o conteúdo quando página chega ao fim*/
+/*60px + 16 +16 para os smartphones - considerando o padding do body em anterior como 26ps em cima e em baixo
+Técnica a considerar: padding atual mais 66*/
+
+        body {
+  padding-bottom: 66px;
+}
+
+
+
+
     h1, h2 {
       color: #2c3e50;
     }
@@ -158,52 +171,53 @@
   </footer>
 
 
-<!-- Botão esquerdo -->
-<a href="ficheiroa9.html" class="seta-lateral esquerda" title="Página anterior">
-    &#9664;
-</a>
-
-<!-- Botão direito -->
- 
-<a href="index.html" class="seta-lateral direita" title="Página seguinte">
-    &#9654;
-</a>
-
-
+  <!-- Navegação no fundo -->
+<div class="navegacao-fundo">
+  <a href="ficheiroa9.html" class="nav-esquerda">Anterior</a>
+  <a href="index.html" class="nav-centro">Início</a>
+  <a href="ficheiroa11.html" class="nav-direita">Próximo</a>
+</div>
 
 <style>
-.seta-lateral {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 28px;
-    height: 40px;
-    background-color: #1167b1;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;        /* tamanho pequeno da seta */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+/* Rodapé fixo ao fundo, ocupa toda a largura */
+.navegacao-fundo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 0;
+  background: white;
+  border-top: 1px solid #ccc;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  z-index: 1000; /* garante que fica por cima */
 }
 
-/* Esquerda */
-.seta-lateral.esquerda {
-    left: 0;
-    border-radius: 0 6px 6px 0;
+/* Cada link como grid-item válido */
+.navegacao-fundo a {
+  display: block;   /* 🔑 essencial */
+  cursor: pointer;
+  color: #285e8e;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
 }
 
-/* Direita */
-.seta-lateral.direita {
-    right: 0;
-    border-radius: 6px 0 0 6px;
-}
+/* Posicionamento */
+.nav-esquerda { justify-self: start; }
+.nav-centro   { justify-self: center; }
+.nav-direita  { justify-self: end; }
 
-.seta-lateral:hover {
-    background-color: #0d4f87;
+/* Hover */
+.navegacao-fundo a:hover {
+  text-decoration: underline;
 }
 </style>
+
+
 
 
 
